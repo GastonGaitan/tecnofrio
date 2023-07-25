@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TecnoFrio</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'images/snow.svg' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.5.0/dist/clipboard.min.js"></script>
+
+  <style>
+    .recuadro {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px; /* Agregamos esta propiedad para los bordes redondeados */
+  }
+
+  .recuadro h1,
+  .recuadro button {
+    margin-left: 5px;
+  }
+
+  .btn-copiar{
+    font-size: 30%;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .navbar-brand img {
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .navbar-brand h1 {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    #presupuesto {
+      padding-left: 20px; /* Aplicamos padding de 20px en pantallas más grandes */
+    }
+    .h3, h3{
+        font-size: 30px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .img-fluid{
+        height: 150px;
+    }
+    .h3, h3{
+        font-size: 15px;
+    }
+  }
+
+
+  .feature-icon{
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+  }
+
+  #whatsapp{
+    height: 30px;
+  }
+
+  </style>
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand pt-0" href="#"><img src="{% static 'images/snow.svg' %}" height="30px" alt=""><h1>TecnoFrio</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#nosotros">Nosotros</a>
+          </li>
+          <!--<li class="nav-item dropdown">
+            <a class="nav-link" href="#carouselExample">Fotos</a>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="px-4 pt-1 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis" style="font-size: 150%;">Instalación, reparación y mantenimiento<br>de aires acondicionados.</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4" style="font-size: 100%;">Bienvenido a nuestro sitio web!<br>Contactese con nosotros para obtener un presupuesto.</p>
+      <div class="container d-flex justify-content-center align-items-center contenedor-boton pb-4">
+        <div class="recuadro">
+          <h3 style="position: relative; top: 4px;"><span id="numero">3487-15-404433</span></h3>
+          <button id="btn-copiar" class="btn btn-primary" data-clipboard-target="#numero" style="border-radius: 30px;">Copiar número</button>
+        </div>
+      </div>
+      <div class="d-grid gap-2 d-sm-flex justify-content-center mb-4">
+        <a href="https://wa.me/5493487404433" target="_blank" rel="noopener noreferrer" id="presupuesto">
+          <button type="button" class="btn btn-success btn-lg px-4 me-sm-3">Obtener un presupuesto <img src="{% static 'images/whatsapp-svgrepo-com.svg' %}" alt="whatsapp" id="whatsapp"></button>
+        </a>
+      </div>      
+    </div>
+    <div class="overflow-hidden" style="max-height: 50vh;">
+      <div class="container px-5">
+        <img src="{% static 'images/tecnico.jpg' %}" class="img-fluid border rounded-3 shadow-lg" alt="Example image" width="700" height="1000" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class=" border-bottom" id="nosotros">¿Porque nosotros?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="{% static 'images/briefcase.svg' %}" alt="" height="40">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">20 años de experiencia</h3>
+        <p>Ya hace tiempo, ante la falta de profesionales en esta área, decidimos emprender con dedicación y esfuerzo para establecernos en el mercado.</p>
+        <br><br>
+        <a href="https://wa.me/5493487404433" class="icon-link">
+          Contactarse
+          <img src="{% static 'images/chevron-right.svg' %}" alt="chevron-right">
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="{% static 'images/file-earmark-check.svg' %}" alt="bus-front" height="40">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Técnico matriculado</h3>
+        <p>Encargado matriculado por la camara de refrigeración argentina. Esto asegura que se pueda reclamar la garantia del equipo con el fabricante.</p><br>
+        <a href="https://wa.me/5493487404433" class="icon-link">
+          Contactarse
+          <img src="{% static 'images/chevron-right.svg' %}" alt="chevron-right">
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="{% static 'images/car-front-fill.svg' %}" alt="" height="40">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Atencion a domicilio</h3>
+        <p>Tenemos todos los insumos y herramientas necesarias para realizar el trabajo. Arregla una cita con nosotros y nos encargamos del resto.</p>
+        <br><br>
+        <a href="https://wa.me/5493487404433" class="icon-link">
+          Contactarse
+          <img src="{% static 'images/chevron-right.svg' %}" alt="chevron-right">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--<div class="container-sm">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./1.jpeg" class="d-block w-100" alt="..." height="700px">
+        </div>
+        <div class="carousel-item">
+          <img src="./12.jpeg" class="d-block w-100" alt="..." height="700px">
+        </div>
+        <div class="carousel-item">
+          <img src="./13.jpeg" class="d-block w-100" alt="..." height="700px">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
